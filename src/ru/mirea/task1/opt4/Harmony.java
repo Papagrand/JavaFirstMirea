@@ -78,6 +78,15 @@ public class Harmony {
             }
         }
     }
+    public static int Factorial(int numb){
+        int result = 1;
+        while(numb > 0){
+            result *= numb;
+            numb--;
+        }
+
+        return result;
+    }
     public static void main(String[] args) {
         int comm=-1;
         Scanner scanner = new Scanner(System.in);
@@ -107,7 +116,19 @@ public class Harmony {
                     print_array(a);
                 }
                 case 5->{
+                    int numb=0;
+                    while(numb<=0){
+                        System.out.print("Введите число: ");
+                        numb=scanner.nextInt();
+                        if(numb<=0){
+                            System.out.print("Введите положительное число\n");
+                        }
+                    }
 
+                    System.out.print("Факториал: "+Factorial(numb)+"\n");
+                }
+                default -> {
+                    return;
                 }
             }
         }
