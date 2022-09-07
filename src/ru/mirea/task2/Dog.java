@@ -24,6 +24,6 @@ public class Dog {
     }
     @Override
     public String toString(){
-        return "Кличка: "+ dog_name +"Возраст: "+dog_age+"Возраст в человеческих годах: "+dog_age_to_human();
+        return "Кличка: "+ dog_name +" Возраст: "+dog_age+" Возраст в человеческих годах: "+dog_age_to_human()+" ";
     }
 }
