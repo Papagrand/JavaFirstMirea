@@ -2,20 +2,41 @@ package ru.mirea.task8;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Scanner;
+import java.util.Random;
+
 
 public class TwentyShapes {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("20 Фигур");
+    public static void main(String args[]){
+        JFrame frame = new JFrame("Task8_1");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        GUI_1 gui_1 = new GUI_1();
-        for(int i=0;i<10;i++) {
-            System.out.println(i);
-            gui_1.setBackground(Color.WHITE);
-            frame.setSize(1920, 1080);
-            frame.add(gui_1);
-            frame.setVisible(true);
-}
-
+        Color[] colors = new Color[]{Color.red, Color.blue, Color.yellow, Color.gray, Color.green, Color.pink, Color.cyan, Color.magenta, Color.orange, Color.black, Color.darkGray, Color.gray};
+        Random rand = new Random();
+        for (int i=0; i<20; i++){
+            switch ((int)(Math.random()*2)) {
+                case 0:
+                    frame.add(new Circle(
+                            rand.nextInt(250),
+                            rand.nextInt(250),
+                            rand.nextInt(50)+50,
+                            colors[rand.nextInt(colors.length)]
+                    ));
+                    break;
+                case 1:
+                    frame.add(new Rectangle(
+                            rand.nextInt(250),
+                            rand.nextInt(250),
+                            rand.nextInt(100),
+                            rand.nextInt(150),
+                            colors[rand.nextInt(colors.length)]
+                    ));
+                    break;
+                default:
+                    break;
+            }
+        }
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+        frame.setSize(700,700);
     }
 }
