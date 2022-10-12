@@ -1,50 +1,20 @@
 package ru.mirea.task8;
 
-import ru.mirea.task7.Shape;
+import java.awt.*;
 
-public class Circle {
-    protected int radius;
-    protected String color;
-    protected int x,y;
-    public Circle(){};
+class Circle extends Shape {
+    private int radius;
 
-
-    public Circle(int radius, String color,int x, int y){
+    Circle(int x, int y, int radius, Color color) {
+        super(x, y, color);
         this.radius=radius;
-        this.color=color;
-        this.x=x;
-        this.y=y;
+        this.setSize(radius, radius);
     }
 
-    public void setRadius(int radius) {
-        this.radius = radius;
-    }
-
-    public int getRadius() {
-        return radius;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getColor() {
-        return color;
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.setColor(this.color);
+        g.fillOval(0,0, radius, radius);
     }
 }
